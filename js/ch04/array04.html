@@ -10,7 +10,8 @@
      -->
      <style>
          table {
-             border: 1px solid white; width: 700px; 
+             margin: 0 auto;
+             border: 1px solid white; width: 500px; 
              background-color: rgba(20, 30, 200, 0.1);
          }
          thead {
@@ -18,7 +19,7 @@
          }
          td {
              border: 1px dotted blue; text-align: center;
-             padding: 10px; height: 50px;
+             padding: 10px; height: 30px;
          }
          caption {
              font-weight: bold; font-size: 2em;
@@ -72,20 +73,22 @@
                 ave = tot/2;
                 student[i][4] = tot;
                 student[i][5] = Number(ave.toFixed(2));
-                document.write("<td>" + student[i][j] + "<br></td>");
+                document.write("<td>" + student[i][j] + "</td>");
             }
             document.write("</tr>");
         }
         document.write("<tr><td colspan='2'>평균</td>");
         for(var i = 2; i <= student.length; i++){
-            var tot = 0, ave = 0;
+            tot = 0, ave = 0;
             for(var j = 0; j < student.length; j++){
                 tot += student[j][i];
             }
-            ave = tot/5;
+            ave = tot/student.length;
             document.write("<td>" + ave.toFixed(2) + "</td>");
         }
         document.write("</tr></table>");
+
+        // 새로운 배열이 추가 되었을 때도 적용할 수 있게 해야한다 지금은 불안정하다
 
     </script>
 </body>
